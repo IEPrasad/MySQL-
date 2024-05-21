@@ -1,10 +1,4 @@
 
--- The answers for the Lab test 03 in EEI 3266
--- Name: J.V.G.I.E Prasad
--- Reg : 523593409
--- S Num : s23010155
-
-
 -- 1. Create the database “CarSales”
 CREATE DATABASE CarSales;
 
