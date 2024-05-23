@@ -70,11 +70,55 @@ Eg: 2
     LIMIT 5
 
 
+----------------------------------------------------------
+
+
+** The LIKE keyword is used with the WHERE command to search for patterns in string values.
+
+      SELECT *
+      FROM comics
+      WHERE title
+      LIKE 'The Avengers%'
 
 
 
+** The % symbol can replace any number of characters (one, multiple or none) in a string to create patterns.
+
+      SELECT title
+      FROM comics
+      WHERE title LIKE 'The Avengers%'
+
+>>> 
+   The Avengers: Celestial Quest
+   The Avengers: Citizen Kang
+   The Avengers: Infinity Classic
+
+Eg: 2 
+
+    ----   ** Method 1   ----
+
+** The % special symbol is known as a wildcard and is used to create patterns. 
+
+You can use patterns to extract email addresses that share the same domain.
+
+      Select the string that matches the pattern '%gmail.com'
+            r.simpsons@mail.com
+            r.simpsons@gmail.us
+      >>    r.simpsons@gmail.com
+      ---------------------------------
+
+   ----   ** Method 2   ----
+
+** The % wildcard can be used in any part of the pattern and as many times as needed.
+
+      Extract all the titles that contain the word Avengers
+            SELECT *
+            FROM comics
+            WHERE title
+            LIKE '%Avengers%'
 
 
-
-
-
+** Which pattern should be used to match only strings that start with the character 'A'?
+            '%A'
+      >>    'A%'
+            '%A%'
