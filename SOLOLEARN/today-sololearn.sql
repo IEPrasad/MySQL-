@@ -16,7 +16,6 @@ Eg: 1
     SELECT title
     FROM movies
     WHERE year > 2000 
-    SQL
 
     This query extracts…
     movies that after 2000
@@ -56,7 +55,6 @@ Eg: 2
     SELECT name, price, price + delivery
     FROM sales
     WHERE id > 3
-    SQL
        
       >>  3
 
@@ -72,6 +70,7 @@ Eg: 2
 
 ----------------------------------------------------------
 
+----------- Pattern Matching ----------
 
 ** The LIKE keyword is used with the WHERE command to search for patterns in string values.
 
@@ -122,3 +121,105 @@ You can use patterns to extract email addresses that share the same domain.
             '%A'
       >>    'A%'
             '%A%'
+
+Eg: 
+
+** Select the product name that will be extracted
+
+      SELECT name
+      FROM products
+      WHERE name LIKE 'Apple%' 
+
+            APPLE jam
+      >>    Apple juice
+            apple pie
+
+
+** The % symbol stands for any number of characters, including zero characters.
+
+      Which pattern matches both 'service fee' and 'fee refund' values?
+            'fee%'
+      >>    '%fee%'
+            '%fee'
+
+** Which strings will match the pattern 'Package%1%'?
+
+   >>   Package 10E: Business Plan 
+        Package 25A: Economy Plan 
+   >>   Package AD1: Intermediate Plan
+
+
+** Which of the following hotel names will match the pattern 'A%S%' 
+   >>      Alpine Summit Lodge
+           Aqua Coral Inn
+           Amber Bay Resort
+
+
+--------------- Advanced Pattern Matching  ----------------
+
+** The underscore symbol _ is another wildcard and represents 1 single character only.
+
+      Which product code matches the pattern 'A_B8'?
+            A8B5
+            A15B8
+            AB8
+      >>    A4B8
+
+
+** Which product codes match the pattern 'A_B_'
+Select all correct answers.
+
+      >>    A4B8
+            A154B
+      >>    A8B5
+
+
+** Match the wildcard symbol with the number of characters it represents
+      any number of characters: %
+      1 single character: _
+
+
+
+** You can include multiple queries in your SQL code. You just need to separate them with a semicolon(;)
+
+            SELECT name, code
+            FROM products;
+
+            SELECT name
+            FROM products
+            WHERE code LIKE 'A_B_';
+
+** Patterns are case-sensitive. 
+
+LOWER() and UPPER() commands are used to convert strings to lower or uppercase.
+
+      /*
+      Converts strings in the 
+      title field to lowercase
+      */
+      SELECT LOWER(title)
+      FROM movies;
+
+      /*
+      Converts strings in the 
+      title field to uppercase
+      */
+      SELECT UPPER(title)
+      FROM movies;
+
+>>> 
+      lower
+
+      home alone
+      star wars
+      jurassic park
+      frozen
+      pirates of the caribbean
+
+      upper
+      HOME ALONE
+      STAR WARS
+      JURASSIC PARK
+      FROZEN
+      PIRATES OF THE CARIBBEAN
+      
