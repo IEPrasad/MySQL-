@@ -222,4 +222,31 @@ LOWER() and UPPER() commands are used to convert strings to lower or uppercase.
       JURASSIC PARK
       FROZEN
       PIRATES OF THE CARIBBEAN
+
+
+** Complete to extract all employee names in lowercase
       
+      SELECT LOWER (name)
+      FROM employees
+
+
+** Use LOWER (or UPPER) with LIKE in the WHERE command line for case-insensitive pattern matching
+
+      SELECT title
+      FROM books
+      WHERE LOWER(title) LIKE '%cooking%'
+
+      The query performs a case-insensitive pattern search and produces a results table with book titles…
+
+      >>    unchanged
+            in lowercase
+
+Eg: 
+
+** You can use both UPPER() and LOWER() operations for case-insensitive pattern matching.
+
+      The characters in your pattern then just need to match your operation.
+            SELECT name
+            FROM employees
+            WHERE LIKE UPPER(name) 'DAN%'
+
