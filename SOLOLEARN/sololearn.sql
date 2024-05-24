@@ -382,6 +382,9 @@ Select all correct answers.
       Represents any number of characters: %
 
 
+************** from there you should do the sololearn again 
+because thats not perfect enough now, this is not completed ***********
+
 ----------------------------------------------------
 
 
@@ -438,3 +441,118 @@ SELECT category,
 
 ----------------- Cleaning Data -------------------
 
+
+** You can use GROUP BY in combination with HAVING to check for duplicates in the data.
+
+--checking for id duplicates
+      SELECT id, COUNT(id)
+      FROM employees
+      GROUP BY id
+      HAVING COUNT(id) > 1;
+
+
+
+** You can group by multiple fields to check for data duplication across multiple fields
+
+/*checking for combination 
+duplicates of id and name values */
+      SELECT id, name
+      FROM employees
+      GROUP BY id, name
+      HAVING COUNT(id) > 1;
+
+
+** Complete the query to extract unique movie genres
+
+      SELECT DISTINCT genre 
+      FROM movies
+
+
+** You can combine DISTINCT with filtering. 
+
+Complete the query
+
+      SELECT DISTINCT genre
+      FROM movies
+      WHERE year > 1990;
+
+
+** You can check if your data contains missing values. Use IS NULL in combination with WHERE to find missing values
+
+      SELECT * 
+      FROM movies 
+      WHERE genre IS NULL
+
+
+------------------ Fixing Data Types --------------------
+
+
+** You can use booleans when filtering data.
+
+Can you change the code to see movies that have won an Oscar?
+
+      SELECT  id, title, is_oscar_winner
+      FROM movies
+      WHERE is_oscar_winner = False;
+
+
+
+------------------ Making Sense of Data --------------------
+
+
+
+** Data queries are incredibly useful for extracting insights from data and answering questions.
+
+      SELECT product, SUM(qty)
+      FROM sales
+      WHERE month = 'June'
+      GROUP BY product
+
+
+
+** Reorder the first 4 steps in the data analysis process
+      
+      Ask question
+      Collect data
+      Clean data
+      Extract insights
+
+** You can use logical operations to filter data that meets multiple conditions. The AND operation results in a True value only when all conditions are True.
+
+      SELECT title
+      FROM books
+      WHERE qty >= 5 AND year > 1950
+
+
+** Complete the query to retrieve ids of orders that have been delivered in USA
+
+      SELECT id
+      FROM orders
+      WHERE status = 'Delivered' AND country = 'USA';
+
+
+
+** Complete the query to retrieve the user with either the username ann88 or the phone number 854930340
+
+      SELECT *
+      FROM users 
+      WHERE p_number = 854930340
+      OR username = 'ann88';
+
+
+---------------------- Module 4 Quiz ------------------------
+
+
+** What are the correct way to collect data?
+
+      >>   Using APIs
+      >>   Scraping web pages 
+      >>   Querying a database 
+
+
+** Complete to extract unique product categories
+SELECT DISTINCT category
+FROM products
+
+
+------ This is the end of the Introduction to SQL in sololearn ----------- 
