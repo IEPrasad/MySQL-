@@ -250,3 +250,145 @@ Eg:
             FROM employees
             WHERE LIKE UPPER(name) 'DAN%'
 
+
+
+When running a filtering query. Only those records that make the condition true will be extracted.
+
+The code below will result in 2 tables. The first one helps us to see which records meet the condition. The second one is the result of the filtering query.
+
+
+      /*
+      Shows if the records meet 
+      or don’t meet the condition
+      true (t) or false (f)
+      */
+      SELECT year, year > 2000 AS result
+      FROM movies;
+
+      /*
+      Filtering query that extracts
+      only the records that make
+      the condition true
+      */
+      SELECT title
+      FROM movies
+      WHERE year > 2000;
+
+
+
+** Complete to extract only the products available in stock
+
+      SELECT name
+      FROM products
+      WHERE quantity <> 0;
+
+-----------------------------------------------------------------
+
+
+            ---------    Data Aggregation    ----------
+
+** MAX() is an example of an aggregation operation. What’s the maximum value for the year field?
+
+MAX(year)
+
+      >>     1993
+             1977
+
+
+**    Aggregation...
+
+      operates on multiple values
+      to produce 1 single value
+
+
+** Remember you can generate result tables with more than one column. You just need to separate the columns with commas ,
+
+      SELECT MIN(year) , MAX(year)
+      FROM movies;
+
+
+** COUNT() is another aggregation operation. It counts the number of records
+
+      SELECT COUNT(year)
+      FROM movies;
+
+
+** SUM() is another aggregation operation. It produces the total sum of the values in a numerical field.
+
+      SELECT SUM(price)
+      FROM products;
+
+
+** AVG() is another example of an aggregation operation. It calculates the average value
+
+      SELECT AVG(price)
+      FROM products
+
+
+-------------------- Mixing Things Up -----------------
+
+** Reorder to create a query that combines filtering with an aggregation operation
+
+      SELECT MIN(year)
+      FROM movies
+      WHERE year > 2000
+
+
+** Reorder to create a query that counts the number of records after filtering
+
+      SELECT COUNT(price)
+      FROM products
+      WHERE price > 10
+
+
+**************
+
+** Complete the query to calculate the sum of prices for sales where the status is 'completed'
+
+      SELECT SUM(price)
+      FROM sales
+      WHERE status='completed'
+
+***************
+
+
+** You can combine aggregation with other math operations.
+
+      SELECT SUM(price+delivery) AS revenue
+      FROM sales;
+
+** Aggregation operations are usually referred to as aggregation functions. A function includes the code that is required to perform a task.
+
+      SELECT AVG(price)
+      FROM sales;
+
+
+----------- Module 3 Quiz ---------------
+
+
+
+** Which book records will match the pattern 'The%King_'
+Select all correct answers.
+
+            The Patient King3B
+      >>    The Warrior King2
+      >>    The Warrior King1
+            The Silent King 
+
+
+** Type the wildcard that is used with LIKE next to the explanation
+      
+      Represents any single character: _
+      Represents any number of characters: %
+
+
+----------------------------------------------------
+
+
+
+
+
+
+
+
+
