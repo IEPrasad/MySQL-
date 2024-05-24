@@ -385,10 +385,56 @@ Select all correct answers.
 ----------------------------------------------------
 
 
+** Grouping data allows us to answer questions.
+img-component
+
+Complete the SQL query to calculate the sum of budgets for the different movie genres
+
+      SELECT genre, SUM(budget)
+      FROM movies
+      GROUP BY genre
 
 
 
+** Complete to calculate the lowest movie budget for each genre
+
+      SELECT genre , MIN (budget)
+      FROM movies
+      GROUP BY genre;
 
 
 
+** Remember you can use the AS keyword to give a name to the fields in the results table
+
+      SELECT genre, AVG(budget) AS avg_budget
+      FROM movies
+      GROUP BY genre;
+
+
+** Complete the query to filter, group and aggregate the data
+SELECT category,
+
+      AVG(price) FROM products
+      WHERE rating >= 4
+      GROUP BY category;
+
+
+** HAVING allows you to filter data that has been grouped.
+
+      SELECT genre, AVG(budget)
+      FROM movies
+      GROUP BY genre
+      HAVING AVG(budget) > 50;
+
+
+
+** Complete the code to group first, then filter
+
+      SELECT class, AVG(score)
+      FROM students
+      GROUP BY class
+      HAVING AVG(score) > 85;
+
+
+----------------- Cleaning Data -------------------
 
