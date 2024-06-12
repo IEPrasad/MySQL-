@@ -39,15 +39,46 @@ DELETE FROM Sample_Foreign_key
 WHERE for_id = 'S001';
 
 
+------- IMPORTANT CODES -------
+
+-- 1) Find employees whose names start with 'J':
+
+SELECT * FROM Employees 
+WHERE emp_name LIKE 'J%';
+
+-- Or we can use --->>
+SELECT emp_name, emp_position FROM Employees 
+WHERE emp_name LIKE 'J%';
 
 
+-- 2) Find the car varieties whose model names contain 'Civic':
+
+SELECT * FROM CarVarieties
+WHERE car_model LIKE 'Civic';
 
 
+-- 3) Find the sales records where the sale ID starts with 'S2':
+
+SELECT * FROM Sales
+WHERE sale_id LIKE 'S2%';
 
 
+-- 4) Find dependents whose relation is not 'Spouse':
+
+SELECT * FROM Dependents 
+WHERE depen_relation NOT LIKE 'Spouse%';
+
+-- 5) Find employees whose position contains 'Rep' and whose salary is greater than 45000:
+
+SELECT * FROM Employees
+WHERE emp_position LIKE '%Rep%' 
+AND emp_salary > 1000;
 
 
+-- 6) Find car varieties whose brand is 'Honda' and whose color is not 'Red':
 
-
+SELECT * FROM CarVarieties
+WHERE car_brand LIKE 'Honda'
+AND car_color NOT LIKE 'Red';
 
 
