@@ -8,3 +8,18 @@ CREATE TABLE customers (
     first_name VARCHAR(50),
     favorite_website VARCHAR(100)
 );
+
+
+INSERT DATA INTO WEBSITE (customer_id, last_name, first_name, favorite_website)
+VALUES (001, 'Prasad', 'Jayawardhana', 'chatgpt.com'),
+(002, 'Sampath', 'Jayawardhana', 'google.com'),
+(003, 'Viraj', 'Jayawardhana', 'facebook.com');
+
+SELECT * FROM WEBSITE;
+
+SELECT last_name, favorite_website FROM customers;
+
+
+
+
+
