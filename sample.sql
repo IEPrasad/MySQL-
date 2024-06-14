@@ -1,3 +1,5 @@
+-- you should practice about restrict method and cascaude 
+
 CREATE DATABASE WEBSITE;
 USE WEBSITE;
 CREATE TABLE customers (
