@@ -10,12 +10,12 @@ CREATE TABLE customers (
 );
 
 
-INSERT DATA INTO WEBSITE (customer_id, last_name, first_name, favorite_website)
+INSERT INTO customers (customer_id, last_name, first_name, favorite_website)
 VALUES (001, 'Prasad', 'Jayawardhana', 'chatgpt.com'),
 (002, 'Sampath', 'Jayawardhana', 'google.com'),
 (003, 'Viraj', 'Jayawardhana', 'facebook.com');
 
-SELECT * FROM WEBSITE;
+SELECT * FROM customers;
 
 SELECT last_name, favorite_website FROM customers;
 
