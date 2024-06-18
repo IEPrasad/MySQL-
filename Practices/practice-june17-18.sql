@@ -62,11 +62,49 @@ LIKE '%a';
 -- ^^ and this is shows how to find something with end charachter *** 
 
 
+-- Practice Questions with Expected Output
+
+-- Select all products that cost more than $100.
+SELECT * FROM Products 
+WHERE product_price > 100;
+
+--  Select all employees with a salary less than or equal to $2000.
+SELECT * FROM Employee 
+WHERE emp_salary >= 2000;
+
+-- Select all products whose category contains the word 'Electronics'.
+SELECT * FROM products
+WHERE product_category 
+LIKE '%Electronics%';
+
+-- Select all employees whose position ends with 'Manager'.
+SELECT * FROM Employee
+WHERE emp_position 
+LIKE '%Manager';
+
+-- Select all products whose name contains the substring 'Desk'.
+SELECT * FROM products 
+WHERE product_name
+LIKE '%Desk%';
+
+-- Select all employees whose name ends with 'n'.
+SELECT * FROM Employee
+WHERE emp_name 
+LIKE '%n';
+
+/*
+Summary
+
+These queries and questions provide a variety of ways to practice using the WHERE clause, 
+LIKE operator, and wildcards in MySQL. 
+They help you understand how to filter data based on different conditions and patterns.
+
+-- 
 
 
 
 drop database PracticeDB;
-
+*/
 
 
 
