@@ -26,6 +26,33 @@ foreign key references.
   behavior of deletions and updates in a relational database.
   
 
+4. Examples for Understanding "RESTIRCT"
+
+1. Creating Tables with Foreign Key Constraints
+
+-- Create Parent table
+CREATE TABLE Departments (
+  department_id INT PRIMARY KEY,
+  department_name VARCHAR(50)
+);
+
+-- Create Child table with foreign key constraint
+CREATE TABLE Employees (
+  employee_id INT PRIMARY KEY,
+  emp_name VARCHAR(50),
+  department_id INT,
+  FOREIGN KEY (department_id) REFERENCES Departments(department_id) ON DELETE RESTRICT ON UPDATE RESTRICT
+);
+
+
+
+
+
+
+
+
+
+
 
 
 
