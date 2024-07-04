@@ -87,7 +87,12 @@ INSERT INTO Employees (employee_id, emp_name, department_id)
 UPDATE Departments SET department_name = "Information Technology" WHERE department_id = 2;
 
 
+Summary 
 
+* Meaning: "RESTRICT" prevents deletion or update of now if there are dependent 
+foreign key references.
+
+* Usage: Used in "ON DELETE" and "ON UPDATE" claues in foreign key constraints.
 
 
 
