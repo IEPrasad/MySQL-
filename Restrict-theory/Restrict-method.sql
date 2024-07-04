@@ -94,7 +94,14 @@ foreign key references.
 
 * Usage: Used in "ON DELETE" and "ON UPDATE" claues in foreign key constraints.
 
+* Importance: Ensures data integrity, prevents erros, and provides controlled 
+deletion/ update behavior. 
 
+* Examples: Demonstrate how "RESTRICT" enforces referential integrity by
+preventing certain delete and update operations.
+
+
+  ---- Do more and more practices ---- Then only will succsess 
 
 
 
