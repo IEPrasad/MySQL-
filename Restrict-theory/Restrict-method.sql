@@ -64,6 +64,31 @@ DELETE FROM Departments WHERE department_id = 1;
 -- This will fail with error because of the RESTRICT constraint
 
 
+Example 3: Trying to update Parent Row 
+
+-- Attempt to update a department_id that is referenced in Employees
+UPDATE Deparments SET department_id = 3 WHERE department_id = 1;
+-- This will fail with an error because of the RESTRICT constraint 
+
+
+Example 4: Valid Delete and Update Operations
+
+-- Delete an employee first 
+DELETE FROM Employee WHERE employee_id = 1;
+
+-- Now delete department (this will succeed because no employee reference in anymore)
+DELETE FROM Departments WHERE department_id = 1;
+
+-- Insert the employee back with a valid department reference
+INSERT INTO Employees (employee_id, emp_name, department_id) 
+  VALUES (1, "John Doe", 2);
+
+-- Update the department name (this will suceed because it does not affect the department_id)
+UPDATE Departments SET department_name = "Information Technology" WHERE department_id = 2;
+
+
+
+
 
 
 
