@@ -44,6 +44,36 @@ CREATE TABLE Employees (
   FOREIGN KEY (department_id) REFERENCES Departments(department_id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
+/* In this example, the "RESTRICT" keyword is used to ensure that you cannot
+ delete or update a row in the "Deparments" table if there are 
+ corresponding rows in the "Employees" table.
+*/
+
+Example 2: Trying to Delete a Parent Row
+
+-- Insert sample data into Departments 
+INSERT INTO Departments (department_id, department_name) 
+VALUES (1, 'Sales'), (2, 'IT');
+
+-- Insert sample data into Employees
+INSERT INTO Employees (employee_id, emp_name, department_id) 
+VALUES (1, 'John Doe', 1), (2, 'Jane Smith', 2);
+
+-- Attempt to delete a department that has employees
+DELETE FROM Departments WHERE department_id = 1;
+-- This will fail with error because of the RESTRICT constraint
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
