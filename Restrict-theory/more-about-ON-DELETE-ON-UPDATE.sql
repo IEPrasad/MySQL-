@@ -130,7 +130,23 @@ UPDATE Departments SET department_id = 3 WHERE department_id = 2;
 
 
 
+-------------------------------- 
+Summary 
+  ** CASCADE: Automatically deletes or updates matching rows in 
+  the child tbale.
 
+  ** SET NULL: Sets foreign key columns in the child table to 'NULL'
+
+  ** SET DEFAULT: Sets foreign key columns in the child table to theri 
+  default values.
+
+  ** RESTRICT: Prevents deletion or update if there are matching rows in 
+  the child table.
+
+  ** NO ACTION: Similar to 'RESTRICT' but allows defferd checking.
+
+These actions help maintain data integrity and contr ol how chnages in 
+the parent table affect the child table.
 
 
 
