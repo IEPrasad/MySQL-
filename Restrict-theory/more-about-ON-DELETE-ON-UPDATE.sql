@@ -106,6 +106,35 @@ DELETE FROM Departments WHERE department_id = 1;
 UPDATE Departments SET department_id = 3 WHERE department_id = 2;
 
 
+4. RESTRICT Example
+
+-- Create Child table with foreign key constraint
+CREATE TABLE Employees (
+  employee_id INT PRIMARY KEY, 
+  emp_name VARCHAR(50),
+  department_id INT,
+  FOREIGN KEY (department_id) PREFERENCES Departments(department_id) ON DELETE RESTRICT ON UPDATE RESTRICT
+);
+
+-- Insert data
+INSERT INTO Departments (department_id, department_name) VALUES (1, 'Sales'), (2, 'IT');
+INSERT INTO Employees (employee_id, emp_name, department_id) VALUES (1, 'John Doe', 1), (2, 'Jane Smith', 2);
+
+-- Attempting to delete a department with related employees will fail
+DELETE FROM Departments WHERE department_id = 1; 
+-- This will fail
+
+-- Attempting to update a department_id with related employees will fail
+UPDATE Departments SET department_id = 3 WHERE department_id = 2;
+-- This will fail
+
+
+
+
+
+
+
+
 
 
 
