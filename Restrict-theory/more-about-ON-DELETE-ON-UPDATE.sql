@@ -80,9 +80,30 @@ UPDATE Departments SET department_id = 3 WHERE department_id = 3;
 -- This will set 'Jane Smith's department_id to NULL 
 
 
+3. SET DEFAULT Example
 
+-- Create Parent table with default department
+CREATE TABLE Departments (
+  department_id INT PRIAMRY KEY,
+  department_name VARCHAR(50)
+);
 
+-- Create Child table with foreign key constraint
+CREATE TABLE Employees (
+  employee_id INT PRIMARY KEY,
+  emp_name VARCHAR(50),
+  department_id INT DEFAULT 0,
+  FOREIGN KEY (department_id) PREFERENCES Departments(department_id) ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
+);
 
+-- Insert data
+INSERT INTO Departments (department_id, department_name) VALUES (1, 'Sales'), (2, 'IT');
+INSERT ITNO Employees (employee_id, emp_name, department_id) VALUES (1, 'John Doe', 1), (2, 'Jane Smith', 2);
+
+-- Deleting a department will set departemnt_id to default (0) for related employees
+DELETE FROM Departments WHERE department_id = 1;
+-- Updating a department will set department_id to default (0) for related employees
+UPDATE Departments SET department_id = 3 WHERE department_id = 2;
 
 
 
